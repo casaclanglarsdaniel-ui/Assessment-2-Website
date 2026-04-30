@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Valorant - Home</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-------Navigation Bar------------->
+
+    <div class="nav">
+
+        <!-- Logo image on the left side of the navbar -->
+        <img src="images/logo.png" class="logo">
+
+        <!-- Navigation links to all pages -->
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="agents.html">Agents</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="ranks.html">Ranks</a>
+            <!-- External link to the official Valorant download page -->
+            <a href="https://playvalorant.com/ar-ae/">Download</a>
+        </div>
+
+    </div>
+
+<!------------------------------->
+
+
+<!-------Hero Section------------->
+
+    <div class="hero">
+
+        <!-- Fullscreen background video that autoplays, muted, and loops -->
+        <video class="bg-video" autoplay muted loop playsinline>
+            <source src="videos\background_cinematic_for_title.mp4" type="video/mp4">
+        </video>
+
+        <!-- Hero text overlay on top of the background video -->
+        <div class="hero-content">
+            <h1>VALORANT</h1>
+            <p>A 5v5 tactical shooter where precision, teamwork, and abilities decide victory.</p>
+        </div>
+
+    </div>
+
+<!------------------------------->
+
+
+<!-------Game Preview Section------------->
+
+    <div class="home-section dark">
+        <h2>Game Preview</h2>
+        <p>Watch real gameplay highlights from Valorant.</p>
+
+        <!-- Video container — plays automatically when scrolled into view via JS -->
+        <div class="video-container">
+            <video id="gameVideo" muted loop>
+                <source src="videos/valorant_trailer.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+
+<!------------------------------->
+
+
+<!-------New Agent Section------------->
+
+    <div class="new-agent">
+
+        <!-- Dark overlay on top of the background for readability -->
+        <div class="agent-bg-overlay"></div>
+
+        <!-- Miks character image displayed on the background — hidden when video plays -->
+        <img src="agents_images\CONTROLLERS\Miks.png" class="miks-bg-img" alt="Miks" id="miksImg">
+
+        <!-- Text content: agent name, role, description, and play button -->
+        <div class="miks-content">
+            <span class="agent-label">NEW AGENT · EPISODE 10</span>
+            <h2 class="miks-title">MIKS</h2>
+            <p class="miks-role">🎵 Controller · Agent 30</p>
+            <p class="miks-desc">
+                A Croatian sonic specialist arriving in Valorant. Miks bends sound into weapons — 
+                blending team support with ruthless area control.
+            </p>
+            <!-- Button triggers openMiksVideo() to show the gameplay video panel -->
+            <button class="miks-btn" onclick="openMiksVideo()">▶ Miks Gameplay</button>
+        </div>
+
+        <!-------Miks Video Panel------------->
+
+            <!-- Hidden by default, becomes visible when the play button is clicked -->
+            <div class="miks-video-panel" id="miksVideoPanel">
+
+                <!-- Close button triggers closeMiksVideo() to hide the panel -->
+                <button class="close-video-btn" onclick="closeMiksVideo()">✕ Close</button>
+
+                <!-- Miks gameplay video shown inside the panel -->
+                <video id="miksVideo" controls>
+                    <source src="videos\Miks_gameplay.mp4" type="video/mp4">
+                </video>
+
+            </div>
+
+        <!------------------------------->
+
+    </div>
+
+<!------------------------------->
+
+
+<!-------Game Features Section------------->
+
+    <div class="features-section">
+
+        <!-- Section heading and subtitle -->
+        <div class="features-header">
+            <span class="features-eyebrow">WHY VALORANT</span>
+            <h2>Built Different</h2>
+            <p>A tactical shooter that demands precision, teamwork, and strategy in every round.</p>
+        </div>
+
+        <!-- Grid layout containing all feature tiles -->
+        <div class="features-grid">
+
+            <!-- Large feature tile: Gunplay -->
+            <div class="feature-tile feature-large">
+                <div class="feature-icon-wrap">
+                    <span class="feature-icon">◎</span>
+                </div>
+                <h3>Precise Gunplay</h3>
+                <p>Every bullet has purpose. No random spray patterns — accuracy and reaction time separate good players from great ones.</p>
+                <div class="feature-glow"></div>
+            </div>
+
+            <!-- Feature tile: Agents -->
+            <div class="feature-tile">
+                <div class="feature-icon-wrap">
+                    <span class="feature-icon">⚔</span>
+                </div>
+                <h3>Unique Agents</h3>
+                <p>25+ agents each with distinct abilities that transform how rounds are played and won.</p>
+                <div class="feature-glow"></div>
+            </div>
+
+            <!-- Feature tile: Maps -->
+            <div class="feature-tile">
+                <div class="feature-icon-wrap">
+                    <span class="feature-icon">◈</span>
+                </div>
+                <h3>Strategic Maps</h3>
+                <p>Every map is engineered for teamwork, smart positioning, and high-level strategy.</p>
+                <div class="feature-glow"></div>
+            </div>
+
+            <!-- Feature tile: Free to Play -->
+            <div class="feature-tile">
+                <div class="feature-icon-wrap">
+                    <span class="feature-icon">◉</span>
+                </div>
+                <h3>Free to Play</h3>
+                <p>No paywalls on performance. Every agent can be earned — cosmetics are purely optional.</p>
+                <div class="feature-glow"></div>
+            </div>
+
+            <!-- Wide feature tile: Ranked Progression -->
+            <div class="feature-tile feature-wide">
+                <div class="feature-icon-wrap">
+                    <span class="feature-icon">▲</span>
+                </div>
+                <h3>Ranked Progression</h3>
+                <p>Climb from Iron all the way to Radiant. A transparent rating system rewards consistent improvement over every single match.</p>
+                <div class="feature-glow"></div>
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Game Modes & Maps Section------------->
+
+    <div class="modes-maps-section">
+
+        <!-------Game Modes------------->
+
+        <div class="mm-block">
+            <div class="mm-label">GAME MODES</div>
+            <h2>How Do You Play?</h2>
+
+            <!-- Cards container for all three game modes -->
+            <div class="mm-cards">
+
+                <!-- Mode card: Unrated (casual play) -->
+                <div class="mm-card">
+                    <div class="mm-card-top">
+                        <span class="mm-icon">◎</span>
+                        <span class="mm-badge">Casual</span>
+                    </div>
+                    <h3>Unrated</h3>
+                    <p>Standard 5v5 matches with no rank pressure. Practice and improve at your own pace.</p>
+                </div>
+
+                <!-- Mode card: Competitive (ranked — highlighted with accent style) -->
+                <div class="mm-card mm-card-accent">
+                    <div class="mm-card-top">
+                        <span class="mm-icon">◈</span>
+                        <span class="mm-badge mm-badge-red">Ranked</span>
+                    </div>
+                    <h3>Competitive</h3>
+                    <p>Climb the leaderboard. Every round counts as you fight to prove your rank.</p>
+                </div>
+
+                <!-- Mode card: Spike Rush (quick casual mode) -->
+                <div class="mm-card">
+                    <div class="mm-card-top">
+                        <span class="mm-icon">⚡</span>
+                        <span class="mm-badge">Quick</span>
+                    </div>
+                    <h3>Spike Rush</h3>
+                    <p>Short, chaotic matches with random weapons. Pure fun, zero commitment.</p>
+                </div>
+
+            </div>
+        </div>
+
+        <!------------------------------->
+
+        <!-- Vertical divider between the two blocks -->
+        <div class="mm-divider"></div>
+
+        <!-------Featured Maps------------->
+
+        <div class="mm-block">
+            <div class="mm-label">FEATURED MAPS</div>
+            <h2>The Battlegrounds</h2>
+
+            <!-- List of featured maps with descriptions -->
+            <div class="mm-maps">
+
+                <!-- Map card: Bind -->
+                <div class="mm-map-card">
+                    <div class="mm-map-num">01</div>
+                    <div class="mm-map-info">
+                        <h3>Bind</h3>
+                        <p>Two teleporters enable lightning-fast rotations and unpredictable plays.</p>
+                    </div>
+                    <span class="mm-map-tag">2 Sites</span>
+                </div>
+
+                <!-- Map card: Haven -->
+                <div class="mm-map-card">
+                    <div class="mm-map-num">02</div>
+                    <div class="mm-map-info">
+                        <h3>Haven</h3>
+                        <p>The only map with three spike sites — defenders are always stretched thin.</p>
+                    </div>
+                    <span class="mm-map-tag">3 Sites</span>
+                </div>
+
+                <!-- Map card: Ascent -->
+                <div class="mm-map-card">
+                    <div class="mm-map-num">03</div>
+                    <div class="mm-map-info">
+                        <h3>Ascent</h3>
+                        <p>Open mid control with mechanical doors that shift the entire round dynamic.</p>
+                    </div>
+                    <span class="mm-map-tag">2 Sites</span>
+                </div>
+
+            </div>
+        </div>
+
+        <!------------------------------->
+
+    </div>
+
+<!------------------------------->
+
+
+<!-------Download Section------------->
+
+    <!-- Simple call-to-action section to download the game -->
+    <div class="home-section">
+        <h2>Download Valorant</h2>
+        <p>Ready to play? Jump into the action now.</p>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Scripts------------->
+
+    <script>
+
+        //-------Scroll Video Autoplay------------->
+
+            // Get the game preview video element by its ID
+            const video = document.getElementById("gameVideo");
+
+            // Checks if the video is visible in the viewport
+            function playVideoOnScroll() {
+                const rect = video.getBoundingClientRect();
+
+                // Returns true if any part of the video is within the screen
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+                // Play if visible, pause if scrolled out of view
+                if (isVisible) {
+                    video.play();
+                } else {
+                    video.pause();
+                }
+            }
+
+            // Listen for scroll events and trigger the visibility check
+            window.addEventListener("scroll", playVideoOnScroll);
+
+        //------------------------------->
+
+
+        //-------Miks Video Panel Controls------------->
+
+            // Opens the Miks video panel and hides the character image
+            function openMiksVideo() {
+                const panel = document.getElementById("miksVideoPanel");
+                const video = document.getElementById("miksVideo");
+                const img   = document.getElementById("miksImg");
+
+                // Show the video panel and hide the agent image
+                panel.classList.add("active");
+                img.classList.add("hidden");
+
+                // Wait 500ms for the panel animation before playing the video
+                setTimeout(() => {
+                    video.play();
+                }, 500);
+            }
+
+            // Closes the Miks video panel and restores the character image
+            function closeMiksVideo() {
+                const panel = document.getElementById("miksVideoPanel");
+                const video = document.getElementById("miksVideo");
+                const img   = document.getElementById("miksImg");
+
+                // Hide the panel and show the agent image again
+                panel.classList.remove("active");
+                img.classList.remove("hidden");
+
+                // Stop the video and reset it back to the beginning
+                video.pause();
+                video.currentTime = 0;
+            }
+
+        
+
+    </script>
+
+<!------------------------------->
+
+</body>
+</html>
