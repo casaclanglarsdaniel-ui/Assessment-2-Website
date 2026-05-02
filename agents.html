@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Agents</title>
+    <!-- Links the external CSS file to style this page -->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-------Navigation Bar------------->
+
+    <!-- Navbar container that holds the logo and page links -->
+    <div class="nav">
+
+        <!-- Logo image that sits on the left side of the navbar -->
+        <img src="images/logo.png" class="logo">
+
+        <!-- Wrapper div that groups all the navigation links together -->
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <!-- This link is active since we are currently on the Agents page -->
+            <a href="agents.html">Agents</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="ranks.html">Ranks</a>
+            <!-- Placeholder link, no page connected yet -->
+            <a href="#">Download</a>
+        </div>
+
+    </div>
+
+<!------------------------------->
+
+
+<!-------Agents Hero Banner------------->
+
+    <!-- Full width banner section at the top of the page with a title and subtitle -->
+    <div class="agents-hero">
+        <h1>AGENTS</h1>
+        <p>Choose your weapon. Master your role.</p>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Duelists Section------------->
+
+    <!-- Role section container, reused for every role (Duelists, Initiators, etc.) -->
+    <div class="role-section">
+
+        <!-- Header row that sits above the agent grid, contains icon, title and count -->
+        <div class="role-header">
+
+            <!-- Left side of the header groups the icon and the text together -->
+            <div class="role-header-left">
+                <!-- Icon that visually represents this role -->
+                <span class="role-icon">⚔</span>
+                <div>
+                    <h2>Duelists</h2>
+                    <p>Entry fraggers who create space and take fights first.</p>
+                </div>
+            </div>
+
+            <!-- Displayed on the right side, shows the total number of agents in this role -->
+            <span class="role-count">7 Agents</span>
+        </div>
+
+        <!-- Grid layout that holds all the agent cards for this role -->
+        <div class="agents-grid">
+
+            <!-- Single agent card — contains the image and a hover overlay with name and description -->
+            <div class="agent-tile">
+                <img src="agents_images/DUELISTS/jett.webp" alt="Jett">
+                <!-- Overlay that appears on top of the image when hovered -->
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Jett</span>
+                    <span class="agent-tile-desc">Fast and agile. Aggressive entry plays.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/DUELISTS/phoenix.webp" alt="Phoenix">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Phoenix</span>
+                    <span class="agent-tile-desc">Self-sustaining with fire-based healing.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/DUELISTS/reyna.jpg" alt="Reyna">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Reyna</span>
+                    <span class="agent-tile-desc">Heals and strengthens after every kill.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/DUELISTS/raze.jpg" alt="Raze">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Raze</span>
+                    <span class="agent-tile-desc">Explosive expert clearing enemies fast.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/DUELISTS/yoru.png" alt="Yoru">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Yoru</span>
+                    <span class="agent-tile-desc">Deceives enemies with fakeouts.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/DUELISTS/neon.jpg" alt="Neon">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Neon</span>
+                    <span class="agent-tile-desc">Electric speedster with quick attacks.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/DUELISTS/iso.avif" alt="Iso">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Iso</span>
+                    <span class="agent-tile-desc">Precision duelist who isolates fights.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Initiators Section------------->
+
+    <!-- Same role-section structure reused for the Initiators role -->
+    <div class="role-section">
+
+        <div class="role-header">
+            <div class="role-header-left">
+                <span class="role-icon">◎</span>
+                <div>
+                    <h2>Initiators</h2>
+                    <p>Gather intel and disrupt enemies to help the team push safely.</p>
+                </div>
+            </div>
+            <span class="role-count">6 Agents</span>
+        </div>
+
+        <!-- Agent grid for Initiators -->
+        <div class="agents-grid">
+
+            <!-- Agent card — image + hover overlay with name and description -->
+            <div class="agent-tile">
+                <img src="agents_images/INITIATORS/sova.avif" alt="Sova">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Sova</span>
+                    <span class="agent-tile-desc">Reveals enemy positions with recon.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/INITIATORS/breach.jpg" alt="Breach">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Breach</span>
+                    <span class="agent-tile-desc">Stuns and flashes through walls.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/INITIATORS/skye.jpg" alt="Skye">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Skye</span>
+                    <span class="agent-tile-desc">Heals team and scouts with animals.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/INITIATORS/kayo.png" alt="KAY/O">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">KAY/O</span>
+                    <span class="agent-tile-desc">Suppresses enemy abilities with tech.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/INITIATORS/fade.jpg" alt="Fade">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Fade</span>
+                    <span class="agent-tile-desc">Tracks enemies using fear abilities.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/INITIATORS/gekko.avif" alt="Gekko">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Gekko</span>
+                    <span class="agent-tile-desc">Creatures scout, stun, and control.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Controllers Section------------->
+
+    <!-- Same role-section structure reused for the Controllers role -->
+    <div class="role-section">
+
+        <div class="role-header">
+            <div class="role-header-left">
+                <span class="role-icon">◈</span>
+                <div>
+                    <h2>Controllers</h2>
+                    <p>Block vision and control map areas with smokes and utility.</p>
+                </div>
+            </div>
+            <span class="role-count">5 Agents</span>
+        </div>
+
+        <!-- Agent grid for Controllers -->
+        <div class="agents-grid">
+
+            <!-- Agent card — image + hover overlay with name and description -->
+            <div class="agent-tile">
+                <img src="agents_images/CONTROLLERS/brimstone.jpg" alt="Brimstone">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Brimstone</span>
+                    <span class="agent-tile-desc">Controls areas with smokes and support.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/CONTROLLERS/omen.avif" alt="Omen">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Omen</span>
+                    <span class="agent-tile-desc">Shadows and teleportation confuse enemies.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/CONTROLLERS/viper.avif" alt="Viper">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Viper</span>
+                    <span class="agent-tile-desc">Controls zones with toxic gas and poison.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/CONTROLLERS/astra.jpg" alt="Astra">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Astra</span>
+                    <span class="agent-tile-desc">Manipulates battlefield with cosmic power.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/CONTROLLERS/harbor.png" alt="Harbor">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Harbor</span>
+                    <span class="agent-tile-desc">Water abilities block vision and protect.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Sentinels Section------------->
+
+    <!-- Same role-section structure reused for the Sentinels role -->
+    <div class="role-section">
+
+        <div class="role-header">
+            <div class="role-header-left">
+                <span class="role-icon">◉</span>
+                <div>
+                    <h2>Sentinels</h2>
+                    <p>Defensive specialists protecting sites and watching flanks.</p>
+                </div>
+            </div>
+            <span class="role-count">5 Agents</span>
+        </div>
+
+        <!-- Agent grid for Sentinels -->
+        <div class="agents-grid">
+
+            <!-- Agent card — image + hover overlay with name and description -->
+            <div class="agent-tile">
+                <img src="agents_images/SENTINELS/sage.avif" alt="Sage">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Sage</span>
+                    <span class="agent-tile-desc">Heals teammates and provides support.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/SENTINELS/cypher.avif" alt="Cypher">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Cypher</span>
+                    <span class="agent-tile-desc">Gathers intel and watches flanks.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/SENTINELS/killjoy.avif" alt="Killjoy">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Killjoy</span>
+                    <span class="agent-tile-desc">Gadgets and turrets control areas.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/SENTINELS/chamber.avif" alt="Chamber">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Chamber</span>
+                    <span class="agent-tile-desc">Defensive sniper with teleportation.</span>
+                </div>
+            </div>
+
+            <!-- Agent card -->
+            <div class="agent-tile">
+                <img src="agents_images/SENTINELS/deadlock.jpg" alt="Deadlock">
+                <div class="agent-tile-overlay">
+                    <span class="agent-tile-name">Deadlock</span>
+                    <span class="agent-tile-desc">Locks down enemies with traps and barriers.</span>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------->
+
+</body>
+</html>

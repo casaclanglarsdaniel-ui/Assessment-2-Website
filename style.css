@@ -1,0 +1,2443 @@
+/* =========================================================
+========================= GLOBAL ===========================
+========================================================= */
+
+body {
+    margin: 0; /* remove default spacing */
+    font-family: Arial, Helvetica, sans-serif; /* main font */
+    color: white; /* default text color */
+
+    /* background image with dark overlay */
+    background:
+        linear-gradient(rgba(5,10,20,0.85), rgba(5,10,20,0.95)),
+        url("images/background.avif");
+
+    background-size: cover; /* fill screen */
+    background-position: center; /* center image */
+    background-attachment: fixed; /* parallax effect */
+}
+
+/* background blur layer */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    backdrop-filter: blur(8px); /* blur effect */
+    z-index: -1;
+}
+
+/* texture overlay */
+body::after {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: url("https://www.transparenttextures.com/patterns/asfalt-light.png");
+    opacity: 0.03;
+    pointer-events: none;
+}
+
+
+/* =========================================================
+========================= NAVBAR ===========================
+========================================================= */
+
+.nav {
+    background: rgba(10,15,20,0.6); /* glass effect */
+    backdrop-filter: blur(12px);
+    padding: 10px 40px;
+    border-bottom: 2px solid #ff4655;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* spread items */
+}
+
+/* logo image */
+.logo {
+    height: 40px;
+}
+
+/* logo hover effect */
+.logo:hover {
+    transform: scale(1.05);
+}
+
+/* navigation links container */
+.nav-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+/* individual links */
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 6px 10px;
+    transition: 0.3s;
+}
+
+/* hover effect */
+.nav-links a:hover {
+    background-color: #ff4655;
+    border-radius: 4px;
+}
+
+
+/* =========================================================
+========================= HERO =============================
+========================================================= */
+
+.hero {
+    position: relative;
+    height: 100vh; /* full height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+/* background video */
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    transform: translate(-50%, -50%); /* center */
+    object-fit: cover; /* fill screen */
+    z-index: 0;
+}
+
+/* overlay for readability */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(10,15,20,0.35), rgba(10,15,20,0.65));
+    z-index: 1;
+}
+
+/* hero content */
+.hero-content {
+    position: relative;
+    z-index: 2; /* above overlay */
+}
+
+/* title */
+.hero h1 {
+    font-size: 70px;
+    color: #ff4655;
+}
+
+/* subtitle */
+.hero p {
+    font-size: 18px;
+}
+
+
+/* =========================================================
+===================== HOME SECTION =========================
+========================================================= */
+
+.home-section {
+    padding: 60px 40px;
+    text-align: center;
+}
+
+/* darker variation */
+.home-section.dark {
+    background: rgba(20, 30, 40, 0.45);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+}
+
+/* video wrapper */
+.video-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+/* video styling */
+video {
+    width: 70%;
+    max-width: 800px;
+    border: 3px solid #ff4655;
+    border-radius: 10px;
+}
+
+/* =========================================================
+================ NEW AGENT BANNER (MIKS) ===================
+========================================================= */
+
+/* main section container */
+.new-agent {
+    position: relative;
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* background image on the right */
+.miks-bg-img {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 60%;
+    object-fit: cover;
+    object-position: top center;
+    z-index: 1;
+
+    /* fade effect from right to left */
+    mask-image: linear-gradient(to left, rgba(0,0,0,0.95) 40%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,0.95) 40%, transparent 100%);
+}
+
+/* dark overlay over background */
+.agent-bg-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(5, 10, 20, 0.98) 35%,
+        rgba(5, 10, 20, 0.6) 65%,
+        rgba(5, 10, 20, 0.1) 100%
+    );
+    z-index: 2;
+}
+
+/* text content container */
+.miks-content {
+    position: relative;
+    z-index: 3;
+    padding-left: 80px;
+    max-width: 520px;
+
+    /* entrance animation */
+    animation: slideInLeft 0.9s ease forwards;
+}
+
+/* animation definition */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-60px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* small label above title */
+.agent-label {
+    font-size: 12px;
+    letter-spacing: 4px;
+    color: #ff4655;
+    text-transform: uppercase;
+    border: 1px solid rgba(255,70,85,0.4);
+    padding: 5px 12px;
+    border-radius: 3px;
+    background: rgba(255,70,85,0.08);
+}
+
+/* main agent title */
+.miks-title {
+    font-size: 96px;
+    font-weight: 900;
+    letter-spacing: 10px;
+    color: white;
+    margin: 10px 0 0 0;
+    line-height: 1;
+
+    /* glow effect */
+    text-shadow:
+        0 0 20px rgba(255,70,85,0.5),
+        0 0 60px rgba(255,70,85,0.2);
+}
+
+/* role text */
+.miks-role {
+    color: #ff4655;
+    font-size: 16px;
+    letter-spacing: 2px;
+    margin: 8px 0 16px 0;
+    font-weight: bold;
+}
+
+/* description */
+.miks-desc {
+    color: #adb8c0;
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 420px;
+}
+
+/* CTA button */
+.miks-btn {
+    padding: 14px 32px;
+    background: #ff4655;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    /* glow */
+    box-shadow: 0 0 20px rgba(255,70,85,0.4);
+    text-transform: uppercase;
+}
+
+/* hover effect */
+.miks-btn:hover {
+    background: white;
+    color: #ff4655;
+    box-shadow: 0 0 35px rgba(255,70,85,0.6);
+    transform: translateY(-2px);
+}
+
+/* hidden video panel */
+.miks-video-panel {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 60%;
+    height: 100%;
+    z-index: 4;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+
+    background: rgba(5, 10, 20, 0.92);
+    backdrop-filter: blur(16px);
+
+    opacity: 0;
+    clip-path: inset(0 0 0 100%); /* hidden from right */
+    transition: opacity 0.5s ease, clip-path 0.5s ease;
+    pointer-events: none;
+}
+
+/* when panel is active */
+.miks-video-panel.active {
+    opacity: 1;
+    clip-path: inset(0 0 0 0%);
+    pointer-events: all;
+}
+
+/* video inside panel */
+.miks-video-panel video {
+    width: 85%;
+    max-width: 700px;
+    border: 2px solid #ff4655;
+    border-radius: 10px;
+
+    /* glow */
+    box-shadow: 0 0 40px rgba(255, 70, 85, 0.4);
+}
+
+/* close button */
+.close-video-btn {
+    background: transparent;
+    border: 1px solid rgba(255,70,85,0.5);
+    color: #ff4655;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    align-self: flex-end;
+    margin-right: 7.5%;
+}
+
+/* hover effect */
+.close-video-btn:hover {
+    background: #ff4655;
+    color: white;
+}
+
+/* hide background image when video opens */
+.miks-bg-img.hidden {
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* =========================================================
+======================== FEATURES ==========================
+========================================================= */
+
+/* main section wrapper */
+.features-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 70px 40px;
+}
+
+/* header area */
+.features-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+/* small label above title */
+.features-eyebrow {
+    font-size: 11px;
+    letter-spacing: 4px;
+    color: #ff4655;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 70, 85, 0.3);
+    padding: 5px 16px;
+    border-radius: 3px;
+    background: rgba(255, 70, 85, 0.06);
+    display: inline-block;
+    margin-bottom: 16px;
+}
+
+/* section title */
+.features-header h2 {
+    font-size: 48px;
+    font-weight: 900;
+    color: white;
+    margin: 0 0 12px 0;
+    letter-spacing: 2px;
+}
+
+/* subtitle text */
+.features-header p {
+    color: #adb8c0;
+    font-size: 15px;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+}
+
+/* grid layout for feature cards */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 16px;
+}
+
+/* individual feature card */
+.feature-tile {
+    position: relative;
+    background: rgba(20, 30, 40, 0.45);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 70, 85, 0.12);
+    border-radius: 16px;
+    padding: 30px;
+    overflow: hidden;
+    transition: all 0.35s ease;
+}
+
+/* large variant */
+.feature-large {
+    grid-row: span 2;
+}
+
+/* wide variant */
+.feature-wide {
+    grid-column: span 2;
+}
+
+/* hover effect */
+.feature-tile:hover {
+    border-color: rgba(255, 70, 85, 0.4);
+    transform: translateY(-5px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.5);
+}
+
+/* glow effect */
+.feature-glow {
+    position: absolute;
+    bottom: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: radial-gradient(circle, rgba(255,70,85,0.12), transparent 70%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* show glow on hover */
+.feature-tile:hover .feature-glow {
+    opacity: 1;
+}
+
+/* icon wrapper */
+.feature-icon-wrap {
+    margin-bottom: 18px;
+}
+
+/* icon style */
+.feature-icon {
+    font-size: 28px;
+    color: #ff4655;
+}
+
+/* feature title */
+.feature-tile h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 10px 0;
+}
+
+/* feature text */
+.feature-tile p {
+    color: #adb8c0;
+    font-size: 14px;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================================================
+==================== MODES & MAPS ==========================
+========================================================= */
+
+/* main container */
+.modes-maps-section {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 50px;
+    align-items: start;
+}
+
+/* divider line */
+.mm-divider {
+    width: 1px;
+    background: rgba(255, 70, 85, 0.2);
+    align-self: stretch;
+    margin-top: 60px;
+}
+
+/* label text */
+.mm-label {
+    font-size: 10px;
+    letter-spacing: 4px;
+    color: #ff4655;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+/* section title */
+.mm-block h2 {
+    font-size: 30px;
+    font-weight: 900;
+    color: white;
+    margin: 0 0 24px 0;
+}
+
+/* cards wrapper */
+.mm-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* mode card */
+.mm-card {
+    background: rgba(20, 30, 40, 0.4);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 70, 85, 0.1);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* left accent line */
+.mm-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: rgba(255, 70, 85, 0.3);
+    transition: background 0.3s ease;
+}
+
+/* hover accent */
+.mm-card:hover::before {
+    background: #ff4655;
+}
+
+/* hover effect */
+.mm-card:hover {
+    border-color: rgba(255, 70, 85, 0.35);
+    background: rgba(20, 30, 40, 0.6);
+    transform: translateX(5px);
+}
+
+/* highlighted card */
+.mm-card-accent {
+    border-color: rgba(255, 70, 85, 0.25);
+    background: rgba(255, 70, 85, 0.05);
+}
+
+/* top row */
+.mm-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+/* icon */
+.mm-icon {
+    font-size: 16px;
+    color: #ff4655;
+}
+
+/* badge */
+.mm-badge {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #adb8c0;
+}
+
+/* red badge */
+.mm-badge-red {
+    color: #ff4655;
+}
+
+/* title */
+.mm-card h3 {
+    margin: 0 0 5px 0;
+    font-size: 17px;
+    font-weight: 800;
+    color: white;
+}
+
+/* description */
+.mm-card p {
+    margin: 0;
+    font-size: 13px;
+    color: #adb8c0;
+    line-height: 1.6;
+}
+
+/* maps column */
+.mm-maps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* map card */
+.mm-map-card {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(20, 30, 40, 0.4);
+    border-radius: 12px;
+    padding: 18px 20px;
+    transition: all 0.3s ease;
+}
+
+/* hover */
+.mm-map-card:hover {
+    transform: translateX(5px);
+}
+
+/* map number */
+.mm-map-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: rgba(255, 70, 85, 0.2);
+}
+
+/* hover number */
+.mm-map-card:hover .mm-map-num {
+    color: rgba(255, 70, 85, 0.5);
+}
+
+/* map info */
+.mm-map-info h3 {
+    margin: 0 0 4px 0;
+    color: white;
+}
+
+/* tag */
+.mm-map-tag {
+    font-size: 10px;
+    color: #ff4655;
+}
+
+/* =========================================================
+========================== ABOUT ===========================
+========================================================= */
+
+
+/* ================= MAP SHOWCASE ================= */
+
+/* main wrapper for maps section */
+.map-showcase {
+    width: 100%;
+    padding: 60px 0;
+}
+
+/* individual map container */
+.map-item {
+    position: relative;
+    height: 70vh;
+    margin: 60px auto;
+    width: 90%;
+    max-width: 1200px;
+    border-radius: 16px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+}
+
+/* map background image */
+.map-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.15);
+    transition: transform 1.2s ease;
+}
+
+/* dark gradient overlay on map */
+.map-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(10,15,20,0.85), rgba(10,15,20,0.3));
+}
+
+/* map info panel */
+.map-info {
+    position: relative;
+    z-index: 2;
+    margin-left: 60px;
+    max-width: 450px;
+    padding: 25px;
+    background: rgba(20, 30, 40, 0.35);
+    backdrop-filter: blur(10px);
+    border-left: 4px solid #ff4655;
+    border-radius: 10px;
+
+    opacity: 0;
+    transform: translateX(-80px);
+    filter: blur(8px);
+    transition: all 0.6s ease;
+}
+
+/* map title */
+.map-info h2 {
+    font-size: 40px;
+    color: #ff4655;
+}
+
+/* map description */
+.map-info p {
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+/* active animation state */
+.map-item.active .map-info {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+}
+
+/* zoom in effect */
+.map-item.active .map-bg {
+    transform: scale(1);
+}
+
+/* alternate layout for even maps */
+.map-item:nth-child(even) .map-info {
+    margin-left: auto;
+    margin-right: 60px;
+    transform: translateX(80px);
+}
+
+
+/* ================= SHARED SECTION WRAPPER ================= */
+
+/* generic section wrapper */
+.section {
+    padding: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* section title */
+.section h2 {
+    color: #ff4655;
+}
+
+/* subtitle text */
+.section-subtitle {
+    color: #adb8c0;
+    margin-top: -10px;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* centered title */
+.title {
+    text-align: center;
+    margin-top: 40px;
+    color: #ff4655;
+}
+
+
+/* ================= GUN SHOWCASE ================= */
+
+/* container for gun cards */
+.gun-showcase {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 820px;
+    margin: 0 auto;
+}
+
+/* gun card */
+.gun-card {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: rgba(20, 30, 40, 0.5);
+    backdrop-filter: blur(12px);
+    border-radius: 14px;
+    padding: 24px 30px;
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+/* red left stripe */
+.gun-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #ff4655;
+}
+
+/* hover effect */
+.gun-card:hover {
+    transform: translateX(6px);
+}
+
+/* rank number */
+.gun-rank {
+    font-size: 42px;
+    font-weight: 900;
+    color: rgba(255, 70, 85, 0.2);
+}
+
+/* image wrapper */
+.gun-img-wrap {
+    width: 200px;
+    display: flex;
+    justify-content: center;
+}
+
+/* gun image */
+.gun-img-wrap img {
+    width: 100%;
+    max-height: 80px;
+    object-fit: contain;
+}
+
+/* info section */
+.gun-info {
+    flex: 1;
+}
+
+/* gun name row */
+.gun-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* gun title */
+.gun-top h3 {
+    font-size: 22px;
+    color: white;
+}
+
+/* gun type badge */
+.gun-type {
+    font-size: 11px;
+    color: #ff4655;
+    border: 1px solid rgba(255, 70, 85, 0.4);
+    padding: 3px 10px;
+}
+
+/* description */
+.gun-info p {
+    color: #adb8c0;
+    font-size: 14px;
+}
+
+/* stat row */
+.gun-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+/* individual stat */
+.stat {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* stat label */
+.stat-label {
+    font-size: 11px;
+    color: #adb8c0;
+    min-width: 55px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* stat value text */
+.stat-val {
+    font-size: 13px;
+    color: white;
+    font-weight: 700;
+}
+
+/* stat bar background */
+.stat-bar {
+    flex: 1;
+    height: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+    overflow: hidden;
+}
+
+/* stat bar fill */
+.stat-bar div {
+    height: 100%;
+    background: #ff4655;
+    border-radius: 2px;
+}
+
+
+/* ================= SKINS ================= */
+
+/* grid layout */
+.skins-grid {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr;
+    grid-template-rows: 420px;
+    gap: 16px;
+}
+
+/* skin card */
+.skin-card {
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+/* background */
+.skin-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.6s ease;
+}
+
+/* hover zoom */
+.skin-card:hover .skin-bg {
+    transform: scale(1.06);
+}
+
+/* overlay gradient */
+.skin-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5,10,20,0.97), transparent);
+}
+
+/* content */
+.skin-body {
+    position: absolute;
+    bottom: 0;
+    padding: 24px;
+    z-index: 2;
+}
+
+/* title */
+.skin-body h3 {
+    color: white;
+}
+
+/* badges row */
+.skin-badges {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+}
+
+/* tier badge base */
+.skin-tier {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+
+/* premium tier */
+.tier-premium {
+    background: rgba(255, 70, 85, 0.15);
+    color: #ff4655;
+    border: 1px solid rgba(255, 70, 85, 0.35);
+}
+
+/* select tier */
+.tier-select {
+    background: rgba(100, 180, 255, 0.15);
+    color: #64b4ff;
+    border: 1px solid rgba(100, 180, 255, 0.35);
+}
+
+/* ultra tier */
+.tier-ultra {
+    background: rgba(180, 100, 255, 0.15);
+    color: #b464ff;
+    border: 1px solid rgba(180, 100, 255, 0.35);
+}
+
+/* skin tag pill */
+.skin-tag {
+    font-size: 10px;
+    color: #adb8c0;
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+
+/* footer row */
+.skin-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+/* price */
+.skin-price {
+    color: #ff4655;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+/* weapon count */
+.skin-weapons {
+    font-size: 11px;
+    color: #adb8c0;
+}
+
+
+/* ================= TEAMS ================= */
+
+/* limits section width and centers it on the page */
+.teams-section {
+    max-width: 900px;
+    margin: 0 auto 60px;
+}
+
+/* stacks cards vertically with a small gap between each */
+.teams-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* each team row — flex so rank, logo, and info sit side by side */
+.team-card {
+    display: flex;
+    align-items: center;
+    background: rgba(20, 30, 40, 0.45);
+    border: 1px solid rgba(255, 70, 85, 0.12);
+    border-radius: 14px;
+    overflow: hidden; /* keeps rank strip corners clipped inside the card */
+    transition: 0.3s;
+}
+
+/* slides card right and brightens border on hover */
+.team-card:hover {
+    transform: translateX(8px);
+    border-color: rgba(255, 70, 85, 0.35);
+}
+
+/* the "01 / 02 / 03" column on the far left */
+.team-rank-strip {
+    min-width: 52px;
+    font-size: 28px;
+    font-weight: 900;
+    color: rgba(255, 70, 85, 0.2); /* faint red so it doesn't overpower */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 16px;
+    flex-shrink: 0; /* never squish this column */
+    align-self: stretch; /* fills full card height */
+    background: rgba(255, 70, 85, 0.04); /* very faint red tint */
+    border-right: 1px solid rgba(255, 70, 85, 0.1); /* divider line */
+}
+
+/* fixed-width container that holds the team logo */
+.team-logo-wrap {
+    width: 120px;
+    display: flex;
+    justify-content: center;
+    flex-shrink: 0; /* never squish the logo area */
+}
+
+/* logo image sizing — contain keeps the full logo visible */
+.team-logo-wrap img {
+    width: 110px;
+    height: 110px;
+    object-fit: contain;
+}
+
+/* text block — takes up all remaining space to the right */
+.team-info {
+    flex: 1;
+    padding: 18px 20px 18px 0;
+}
+
+/* row that holds the team name and rank badge side by side */
+.team-name-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.team-name-row h3 {
+    color: white;
+    margin: 0;
+    font-size: 18px;
+}
+
+/* description text under the team name */
+.team-info p {
+    color: #adb8c0; /* muted grey-blue */
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* base styles shared by all three rank badges */
+.team-badge {
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 4px;
+    letter-spacing: 1px;
+}
+
+/* gold badge — warm yellow tint for #1 */
+.badge-gold {
+    background: rgba(255, 200, 50, 0.15);
+    color: #ffc832;
+    border: 1px solid rgba(255, 200, 50, 0.35);
+}
+
+/* silver badge — cool grey tint for #2 */
+.badge-silver {
+    background: rgba(180, 190, 200, 0.15);
+    color: #b4bec8;
+    border: 1px solid rgba(180, 190, 200, 0.3);
+}
+
+/* bronze badge — warm orange tint for #3 */
+.badge-bronze {
+    background: rgba(200, 130, 60, 0.15);
+    color: #c8823c;
+    border: 1px solid rgba(200, 130, 60, 0.3);
+}
+
+/* row of region/league pills at the bottom of each card */
+.team-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap; /* wraps to next line if there are many tags */
+    margin-top: 10px;
+}
+
+/* individual pill tag (e.g. "North America", "VCT Americas") */
+.team-tag {
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #adb8c0;
+    border: 1px solid rgba(255, 255, 255, 0.12); /* faint white outline */
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+
+
+/* ================= GAME MODES ================= */
+
+/* 2-column grid layout for the 4 mode cards */
+.modes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+/* individual mode card — flex so icon, content, and label sit in a row */
+.mode-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px;
+    background: rgba(20, 30, 40, 0.45);
+    border-radius: 14px;
+    position: relative;
+    border: 1px solid rgba(255, 70, 85, 0.1);
+    transition: all 0.3s ease;
+}
+
+/* animated red underline that slides in on hover */
+.mode-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff4655;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+/* trigger the underline slide on hover */
+.mode-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* slight border brighten on hover */
+.mode-card:hover {
+    border-color: rgba(255, 70, 85, 0.3);
+}
+
+/* icon symbol (◎ ◈ ⚡ ◉) — sized and colored */
+.mode-icon {
+    font-size: 28px;
+    color: #ff4655;
+    flex-shrink: 0; /* never squish the icon */
+}
+
+/* text block holding the title and description */
+.mode-content {
+    flex: 1; /* takes up remaining space between icon and label */
+}
+
+/* mode title */
+.mode-content h3 {
+    color: white;
+    margin: 0 0 6px 0;
+    font-size: 17px;
+}
+
+/* mode description */
+.mode-content p {
+    color: #adb8c0;
+    font-size: 13px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* pill label on the right (e.g. "Casual", "Ranked") */
+.mode-label {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ff4655;
+    border: 1px solid rgba(255, 70, 85, 0.3);
+    padding: 4px 12px;
+    border-radius: 3px;
+    flex-shrink: 0; /* keeps label from wrapping */
+    align-self: center;
+}
+
+/* highlighted card for Competitive mode — stands out from the rest */
+.mode-highlight {
+    border-color: rgba(255, 70, 85, 0.35);
+    background: rgba(255, 70, 85, 0.06); /* faint red glow */
+}
+
+/* subtle icon glow on the highlighted card */
+.mode-highlight .mode-icon {
+    text-shadow: 0 0 12px rgba(255, 70, 85, 0.5);
+}
+
+
+/* =========================================================
+======================== AGENTS PAGE =======================
+========================================================= */
+
+
+/* ================= HERO SECTION ================= */
+
+/* agents page hero container */
+.agents-hero {
+    text-align: center;
+    padding: 70px 40px 40px;
+    position: relative;
+}
+
+/* main title */
+.agents-hero h1 {
+    font-size: 80px;
+    font-weight: 900;
+    letter-spacing: 16px;
+    color: white;
+    margin: 0 0 10px 0;
+
+    /* glow effect */
+    text-shadow:
+        0 0 20px rgba(255,70,85,0.4),
+        0 0 60px rgba(255,70,85,0.15);
+}
+
+/* subtitle */
+.agents-hero p {
+    color: #adb8c0;
+    font-size: 16px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+
+/* ================= ROLE SECTIONS ================= */
+
+/* wrapper for each role section */
+.role-section {
+    max-width: 1300px;
+    margin: 0 auto 60px auto;
+    padding: 0 40px;
+}
+
+/* role header container */
+.role-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 16px 24px;
+    margin-bottom: 20px;
+
+    background: rgba(20, 30, 40, 0.5);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 70, 85, 0.2);
+    border-left: 4px solid #ff4655;
+    border-radius: 10px;
+}
+
+/* left side of header */
+.role-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* role icon */
+.role-icon {
+    font-size: 22px;
+    color: #ff4655;
+    min-width: 30px;
+}
+
+/* role title */
+.role-header h2 {
+    margin: 0 0 2px 0;
+    font-size: 20px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* role description */
+.role-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #adb8c0;
+}
+
+/* agent count badge */
+.role-count {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ff4655;
+
+    border: 1px solid rgba(255, 70, 85, 0.3);
+    padding: 5px 14px;
+    border-radius: 3px;
+    background: rgba(255, 70, 85, 0.06);
+}
+
+
+/* ================= AGENTS GRID ================= */
+
+/* grid layout for agents */
+.agents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 12px;
+}
+
+/* individual agent card */
+.agent-tile {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+
+    border: 1px solid rgba(255, 70, 85, 0.15);
+    transition: all 0.35s ease;
+}
+
+/* agent image */
+.agent-tile img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    transition: transform 0.5s ease;
+}
+
+/* image hover zoom */
+.agent-tile:hover img {
+    transform: scale(1.08);
+}
+
+/* overlay info panel */
+.agent-tile-overlay {
+    position: absolute;
+    inset: 0;
+
+    background: linear-gradient(
+        to top,
+        rgba(5, 10, 20, 0.98) 0%,
+        rgba(5, 10, 20, 0.5) 45%,
+        transparent 100%
+    );
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 16px 14px;
+
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+/* show overlay on hover */
+.agent-tile:hover .agent-tile-overlay {
+    opacity: 1;
+}
+
+/* agent name */
+.agent-tile-name {
+    font-size: 16px;
+    font-weight: 800;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* agent description */
+.agent-tile-desc {
+    font-size: 11px;
+    color: #adb8c0;
+    margin-top: 4px;
+}
+
+/* bottom label (data-name) */
+.agent-tile::after {
+    content: attr(data-name);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    padding: 30px 14px 12px;
+    background: linear-gradient(transparent, rgba(5, 10, 20, 0.9));
+
+    font-size: 14px;
+    font-weight: 700;
+    color: white;
+}
+
+/* hover effect */
+.agent-tile:hover {
+    border-color: #ff4655;
+    transform: translateY(-6px) scale(1.02);
+    box-shadow: 0 16px 35px rgba(0, 0, 0, 0.7),
+                0 0 0 1px rgba(255, 70, 85, 0.4);
+}
+
+
+/* =========================================================
+======================== REVIEWS PAGE ======================
+========================================================= */
+
+
+/* ================= HERO SECTION ================= */
+
+/* reviews hero container */
+.reviews-hero {
+    text-align: center;
+    padding: 70px 40px 50px;
+}
+
+/* main title */
+.reviews-hero h1 {
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: 14px;
+    color: white;
+
+    /* glow effect */
+    text-shadow:
+        0 0 20px rgba(255,70,85,0.4),
+        0 0 60px rgba(255,70,85,0.15);
+}
+
+/* subtitle text */
+.reviews-hero p {
+    color: #adb8c0;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 40px 0;
+}
+
+/* stats container */
+.reviews-hero-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+
+    background: rgba(20, 30, 40, 0.5);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(255, 70, 85, 0.2);
+    border-radius: 12px;
+    padding: 20px 40px;
+}
+
+/* individual stat block */
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+/* stat number */
+.hero-stat-num {
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+}
+
+/* stat label */
+.hero-stat-label {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #adb8c0;
+}
+
+/* divider line */
+.hero-stat-divider {
+    width: 1px;
+    height: 50px;
+    background: rgba(255, 70, 85, 0.2);
+}
+
+
+/* ================= REVIEWS GRID ================= */
+
+/* main reviews grid */
+.reviews-page-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px 60px;
+}
+
+/* review link wrapper */
+.review-link-new {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+/* review card */
+.review-card-new {
+    background: rgba(20, 30, 40, 0.45);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 70, 85, 0.15);
+    border-radius: 16px;
+
+    padding: 24px;
+    transition: all 0.35s ease;
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    position: relative;
+    overflow: hidden;
+}
+
+/* quote icon decoration */
+.review-card-new::before {
+    content: "❝";
+    position: absolute;
+    top: 16px;
+    right: 20px;
+
+    font-size: 60px;
+    color: rgba(255, 70, 85, 0.06);
+    font-family: Georgia, serif;
+}
+
+/* hover effect */
+.review-card-new:hover {
+    border-color: rgba(255, 70, 85, 0.45);
+    transform: translateY(-8px);
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6);
+}
+
+/* top section (avatar + info) */
+.rcn-top {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* avatar circle */
+.rcn-avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+
+    background: linear-gradient(135deg, #ff4655, #c0303d);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 18px;
+    font-weight: 900;
+    color: white;
+}
+
+/* user info */
+.rcn-meta {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* username */
+.rcn-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+}
+
+/* platform text */
+.rcn-platform {
+    font-size: 11px;
+    color: #adb8c0;
+}
+
+/* stars */
+.rcn-stars {
+    font-size: 13px;
+    color: gold;
+}
+
+/* review text */
+.rcn-text {
+    color: #c8d0d8;
+    font-size: 14px;
+    line-height: 1.7;
+    font-style: italic;
+    flex: 1;
+}
+
+/* footer tags */
+.rcn-footer {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 14px;
+}
+
+/* tag */
+.rcn-tag {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #ff4655;
+    border: 1px solid rgba(255, 70, 85, 0.3);
+    padding: 3px 10px;
+    border-radius: 3px;
+}
+
+/* read more text */
+.rcn-read {
+    margin-left: auto;
+    font-size: 11px;
+    color: #adb8c0;
+}
+
+/* hover effect */
+.review-link-new:hover .rcn-read {
+    color: #ff4655;
+}
+
+
+/* =========================================================
+======================== REVIEW FORM =======================
+========================================================= */
+
+
+/* form section layout */
+.review-form-section {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    padding: 0 40px;
+
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+/* left side text */
+.review-form-left h2 {
+    font-size: 28px;
+    font-weight: 900;
+    color: white;
+}
+
+/* description */
+.review-form-left p {
+    color: #adb8c0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* form container */
+.review-form-new {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    background: rgba(20, 30, 40, 0.45);
+    backdrop-filter: blur(14px);
+
+    border: 1px solid rgba(255, 70, 85, 0.15);
+    border-radius: 16px;
+
+    padding: 30px;
+}
+
+/* row layout */
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+/* input group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+/* label */
+.form-group label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #adb8c0;
+}
+
+/* inputs */
+.review-form-new input,
+.review-form-new select,
+.review-form-new textarea {
+    width: 100%;
+    padding: 12px 16px;
+
+    border-radius: 8px;
+    border: 1px solid rgba(255, 70, 85, 0.2);
+
+    background: rgba(5, 10, 20, 0.5);
+    color: white;
+    font-size: 14px;
+}
+
+/* focus state */
+.review-form-new input:focus,
+.review-form-new select:focus,
+.review-form-new textarea:focus {
+    border-color: #ff4655;
+    outline: none;
+}
+
+/* textarea size */
+.review-form-new textarea {
+    height: 130px;
+    resize: none;
+}
+
+/* submit button */
+.review-form-new button {
+    padding: 14px;
+    background: #ff4655;
+    border: none;
+    border-radius: 8px;
+
+    color: white;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* button hover */
+.review-form-new button:hover {
+    background: white;
+    color: #ff4655;
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+======================== RANKS PAGE ========================
+========================================================= */
+
+
+/* ================= HERO SECTION ================= */
+
+/* ranks hero container — same structure as reviews-hero */
+.ranks-hero {
+    text-align: center;
+    padding: 70px 40px 50px;
+}
+
+/* main title — matches the same large glow style used on other hero titles */
+.ranks-hero h1 {
+    font-size: 72px;
+    font-weight: 900;
+    letter-spacing: 14px;
+    color: white;
+
+    /* red glow effect to match the site theme */
+    text-shadow:
+        0 0 20px rgba(255,70,85,0.4),
+        0 0 60px rgba(255,70,85,0.15);
+}
+
+/* subtitle text below the title */
+.ranks-hero p {
+    color: #adb8c0;
+    font-size: 15px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin: 0 0 40px 0;
+}
+
+/* stat blocks row — reuses the same pill container from reviews-hero-stats */
+.ranks-hero-stats {
+    display: inline-flex;
+    align-items: center;
+    gap: 40px;
+
+    background: rgba(20, 30, 40, 0.5);
+    backdrop-filter: blur(12px); /* frosted glass effect */
+
+    border: 1px solid rgba(255, 70, 85, 0.2);
+    border-radius: 12px;
+    padding: 20px 40px;
+}
+
+
+/* ================= RANKS GRID ================= */
+
+/* outer section wrapper that limits width and centers the content */
+.ranks-section {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+}
+
+/* grid that holds all 9 rank cards — auto-fill so it wraps responsively */
+.ranks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 30px;
+}
+
+/* individual rank card — flex so icon and text sit side by side */
+.rank-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    background: rgba(20, 30, 40, 0.45);
+    backdrop-filter: blur(12px); /* frosted glass effect */
+
+    border: 1px solid rgba(255, 70, 85, 0.12);
+    border-radius: 14px;
+    padding: 20px 24px;
+
+    position: relative;
+    overflow: hidden; /* keeps the glow from spilling outside the card */
+    transition: all 0.3s ease;
+}
+
+/* red left border stripe — same pattern used on gun-card and mm-card */
+.rank-card::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: rgba(255, 70, 85, 0.3);
+    transition: background 0.3s ease;
+}
+
+/* brightens the left stripe when the card is hovered */
+.rank-card:hover::before {
+    background: #ff4655;
+}
+
+/* slides card slightly right and brightens border on hover */
+.rank-card:hover {
+    transform: translateX(6px);
+    border-color: rgba(255, 70, 85, 0.35);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* fixed size wrapper so all rank icons are the same dimensions */
+.rank-icon-wrap {
+    width: 70px;
+    height: 70px;
+    flex-shrink: 0; /* prevents icon from squishing when text is long */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* rank icon image — contain keeps the full image visible without cropping */
+.rank-icon-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+
+    /* slight glow behind the icon */
+    filter: drop-shadow(0 0 8px rgba(255, 70, 85, 0.3));
+    transition: filter 0.3s ease;
+}
+
+/* strengthens the icon glow when the card is hovered */
+.rank-card:hover .rank-icon-wrap img {
+    filter: drop-shadow(0 0 14px rgba(255, 70, 85, 0.6));
+}
+
+/* text block that holds the rank name, sub-ranks and description */
+.rank-info {
+    flex: 1; /* takes up all remaining space next to the icon */
+}
+
+/* rank name */
+.rank-info h3 {
+    font-size: 18px;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 4px 0;
+    letter-spacing: 1px;
+}
+
+/* sub-rank label (e.g. I · II · III) shown below the name */
+.rank-sub {
+    display: block;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ff4655;
+    margin-bottom: 6px;
+}
+
+/* short description text below the sub-rank label */
+.rank-info p {
+    font-size: 12px;
+    color: #adb8c0;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* special glowing style applied only to the Radiant card to make it stand out */
+.rank-radiant-card {
+    border-color: rgba(255, 200, 100, 0.3); /* warm gold border instead of red */
+    background: rgba(255, 180, 50, 0.05); /* very faint gold tint on the background */
+}
+
+/* gold glow on the left stripe for Radiant */
+.rank-radiant-card::before {
+    background: rgba(255, 200, 100, 0.6);
+}
+
+/* changes the sub-rank label color to gold for Radiant */
+.rank-radiant-card .rank-sub {
+    color: #ffc832;
+}
+
+/* hover effect for Radiant uses a gold glow instead of the default red */
+.rank-radiant-card:hover {
+    border-color: rgba(255, 200, 100, 0.6);
+    box-shadow: 0 10px 30px rgba(255, 180, 50, 0.2);
+}
+
+
+/* ================= HOW RANKING WORKS ================= */
+
+/* outer section wrapper — reuses the shared .section class for spacing */
+.ranking-info-section {
+    max-width: 1100px;
+    margin: 0 auto 80px;
+}
+
+/* 2x2 grid that holds the 4 info cards */
+.ranking-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-top: 30px;
+}
+
+/* individual info card — same glass card style used across the site */
+.ranking-info-card {
+    background: rgba(20, 30, 40, 0.45);
+    backdrop-filter: blur(12px); /* frosted glass effect */
+
+    border: 1px solid rgba(255, 70, 85, 0.12);
+    border-radius: 14px;
+    padding: 28px;
+
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* animated red underline that slides in from the left on hover */
+.ranking-info-card::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #ff4655;
+    transform: scaleX(0);
+    transform-origin: left; /* slide starts from the left edge */
+    transition: transform 0.4s ease;
+}
+
+/* triggers the underline animation on hover */
+.ranking-info-card:hover::after {
+    transform: scaleX(1);
+}
+
+/* brightens border on hover */
+.ranking-info-card:hover {
+    border-color: rgba(255, 70, 85, 0.3);
+}
+
+/* icon symbol above the card title */
+.ranking-info-icon {
+    font-size: 26px;
+    color: #ff4655;
+    margin-bottom: 14px;
+}
+
+/* card title */
+.ranking-info-card h3 {
+    font-size: 17px;
+    font-weight: 800;
+    color: white;
+    margin: 0 0 10px 0;
+}
+
+/* card description */
+.ranking-info-card p {
+    font-size: 13px;
+    color: #adb8c0;
+    line-height: 1.7;
+    margin: 0;
+}
+
+
+/* =========================================================
+================== MOBILE RESPONSIVE =======================
+========================================================= */
+
+/* all rules inside this block only apply when the screen is 768px wide or less */
+@media (max-width: 768px) {
+
+
+    /* ================= NAVBAR ================= */
+
+    /* stacks the logo and links vertically instead of side by side */
+    .nav {
+        flex-direction: column;
+        padding: 14px 20px;
+        gap: 12px;
+    }
+
+    /* wraps links onto multiple lines so they don't overflow off screen */
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 8px;
+    }
+
+    /* slightly smaller link text so they fit better when wrapped */
+    .nav-links a {
+        font-size: 13px;
+        padding: 5px 8px;
+    }
+
+
+    /* ================= HERO SECTION ================= */
+
+    /* reduces the 70px title down to a size that fits on mobile */
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    /* smaller subtitle text */
+    .hero p {
+        font-size: 14px;
+        padding: 0 20px;
+    }
+
+
+    /* ================= HOME SECTIONS ================= */
+
+    /* reduces padding so sections don't feel too spaced out on small screens */
+    .home-section {
+        padding: 40px 20px;
+    }
+
+    /* makes the video full width instead of 70% so it's actually visible */
+    video {
+        width: 100%;
+    }
+
+
+    /* ================= MIKS AGENT SECTION ================= */
+
+    /* removes fixed height and stacks content vertically since side by side won't fit */
+    .new-agent {
+        height: auto;
+        min-height: 100vh;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 40px;
+    }
+
+    /* makes the character image fill the full width instead of just the right 60% */
+    .miks-bg-img {
+        width: 100%;
+        height: 60%;
+        top: 0;
+        /* changes the fade direction from left-to-right to top-to-bottom for mobile layout */
+        mask-image: linear-gradient(to bottom, rgba(0,0,0,0.95) 40%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.95) 40%, transparent 100%);
+    }
+
+    /* removes the left padding and allows content to use full width */
+    .miks-content {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+    }
+
+    /* shrinks the 96px title down to fit on a phone screen */
+    .miks-title {
+        font-size: 52px;
+        letter-spacing: 4px;
+    }
+
+    /* video panel takes full width on mobile instead of just the right 60% */
+    .miks-video-panel {
+        width: 100%;
+    }
+
+
+    /* ================= FEATURES SECTION ================= */
+
+    /* reduces side padding so content doesn't touch the screen edges */
+    .features-section {
+        padding: 40px 20px;
+    }
+
+    /* switches from 3 columns to 1 column so cards stack vertically */
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* removes spanning so large and wide tiles behave like normal single tiles */
+    .feature-large,
+    .feature-wide {
+        grid-column: span 1;
+        grid-row: span 1;
+    }
+
+    /* shrinks the section title so it fits on smaller screens */
+    .features-header h2 {
+        font-size: 32px;
+    }
+
+
+    /* ================= MODES & MAPS SECTION ================= */
+
+    /* switches from 3 columns (left / divider / right) to a single stacked column */
+    .modes-maps-section {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    /* hides the vertical divider line since the layout is now stacked */
+    .mm-divider {
+        display: none;
+    }
+
+
+    /* ================= ABOUT PAGE ================= */
+
+    /* reduces map card height so it doesn't take up too much vertical space */
+    .map-item {
+        height: 50vh;
+        width: 95%;
+        margin: 30px auto;
+    }
+
+    /* reduces the left margin and allows the info panel to use more width */
+    .map-info {
+        margin-left: 20px;
+        margin-right: 20px;
+        max-width: 100%;
+    }
+
+    /* resets the even card offset so it slides in from the left like the others */
+    .map-item:nth-child(even) .map-info {
+        margin-left: 20px;
+        margin-right: 20px;
+        transform: translateX(-80px);
+    }
+
+    /* reduces section padding on mobile */
+    .section {
+        padding: 30px 20px;
+    }
+
+    /* stacks gun card contents vertically and centers them */
+    .gun-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    /* reduces the rank number size when the card is stacked vertically */
+    .gun-rank {
+        font-size: 28px;
+    }
+
+    /* makes the gun image wrapper full width when stacked */
+    .gun-img-wrap {
+        width: 100%;
+    }
+
+    /* switches skins from 3 columns to 1 column so cards don't squish */
+    .skins-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    /* gives each skin card a fixed height since the auto grid rows have no set height */
+    .skin-card {
+        height: 280px;
+    }
+
+    /* switches modes from 2 columns to 1 column */
+    .modes-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* shrinks the rank number strip so it takes less space inside the smaller card */
+    .team-rank-strip {
+        min-width: 36px;
+        font-size: 20px;
+        padding: 0 10px;
+    }
+
+    /* shrinks the logo so it fits inside the smaller card on mobile */
+    .team-logo-wrap img {
+        width: 70px;
+        height: 70px;
+    }
+
+
+    /* ================= AGENTS PAGE ================= */
+
+    /* shrinks the 80px title to fit on a phone screen */
+    .agents-hero h1 {
+        font-size: 48px;
+        letter-spacing: 8px;
+    }
+
+    /* reduces side padding on role sections */
+    .role-section {
+        padding: 0 16px;
+    }
+
+    /* switches agent grid to 2 columns instead of auto-fill with 160px minimum */
+    .agents-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* hides the agent count badge so the header doesn't overflow on small screens */
+    .role-count {
+        display: none;
+    }
+
+
+    /* ================= REVIEWS PAGE ================= */
+
+    /* shrinks the large hero title to fit on a phone screen */
+    .reviews-hero h1 {
+        font-size: 42px;
+        letter-spacing: 8px;
+    }
+
+    /* stacks the three stat blocks vertically instead of side by side */
+    .reviews-hero-stats {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    /* turns the vertical divider line into a short horizontal line between stacked stats */
+    .hero-stat-divider {
+        width: 60px;
+        height: 1px;
+    }
+
+    /* reduces side padding on the reviews grid */
+    .reviews-page-grid {
+        padding: 0 20px 40px;
+    }
+
+    /* switches the review form from 2 columns to a single stacked column */
+    .review-form-section {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        gap: 30px;
+    }
+
+    /* switches the name and rating inputs from side by side to stacked */
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+
+    /* ================= RANKS PAGE ================= */
+
+    /* shrinks the large hero title to fit on a phone screen */
+    .ranks-hero h1 {
+        font-size: 48px;
+        letter-spacing: 8px;
+    }
+
+    /* stacks the stat blocks vertically instead of side by side */
+    .ranks-hero-stats {
+        flex-direction: column;
+        gap: 16px;
+        padding: 20px;
+    }
+
+    /* switches ranks from auto-fill columns to a single column */
+    .ranks-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* switches the how ranking works grid from 2 columns to 1 column */
+    .ranking-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+}

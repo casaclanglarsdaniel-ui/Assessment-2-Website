@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About Valorant</title>
+    <!-- Links the external CSS file to style this page -->
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+<!-------Navigation Bar------------->
+
+    <!-- Navbar container that holds the logo and page links -->
+    <div class="nav">
+
+        <!-- Logo image that sits on the left side of the navbar -->
+        <img src="images/logo.png" class="logo">
+
+        <!-- Wrapper div that groups all the navigation links together -->
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <!-- This link is active since we are currently on the About page -->
+            <a href="about.html">About</a>
+            <a href="agents.html">Agents</a>
+            <a href="reviews.html">Reviews</a>
+            <a href="ranks.html">Ranks</a>
+            <!-- Placeholder link, no page connected yet -->
+            <a href="#">Download</a>
+        </div>
+
+    </div>
+
+<!------------------------------->
+
+
+<!-------Page Title------------->
+
+    <!-- Main heading for the About page, styled with the "title" class -->
+    <h1 class="title">About Valorant</h1>
+
+<!------------------------------->
+
+
+<!-------Map Showcase Section------------->
+
+    <!-- Container that holds all the map cards in a row -->
+    <div class="map-showcase">
+
+        <!-- Single map card — background image is set inline via style attribute -->
+        <div class="map-item">
+            <!-- The map image is applied as a CSS background so it can be sized and positioned with CSS -->
+            <div class="map-bg" style="background-image: url('maps/bind.webp');"></div>
+            <!-- Text overlay that sits on top of the map background image -->
+            <div class="map-info">
+                <h2>Bind</h2>
+                <p>Features teleporters for fast rotations across the map, allowing unpredictable plays.</p>
+            </div>
+        </div>
+
+        <!-- Map card: same structure reused with a different background image -->
+        <div class="map-item">
+            <div class="map-bg" style="background-image: url('maps/haven_map.webp');"></div>
+            <div class="map-info">
+                <h2>Haven</h2>
+                <p>The only map with three spike sites, forcing defenders to constantly adapt.</p>
+            </div>
+        </div>
+
+        <!-- Map card: same structure reused with a different background image -->
+        <div class="map-item">
+            <div class="map-bg" style="background-image: url('maps/ascent_map.webp');"></div>
+            <div class="map-info">
+                <h2>Ascent</h2>
+                <p>Open mid control map that rewards coordination and strategic positioning.</p>
+            </div>
+        </div>
+
+    </div>
+
+<!------------------------------->
+
+
+<!-------Popular Guns Section------------->
+
+    <!-- Section wrapper that adds consistent padding and spacing -->
+    <div class="section">
+        <h2>Popular Guns</h2>
+        <p class="section-subtitle">The most picked weapons in competitive play</p>
+
+        <!-- Container that holds all the gun cards in a row -->
+        <div class="gun-showcase">
+
+            <!-- Gun card: contains rank badge, image, name, type, description and stats -->
+            <div class="gun-card">
+                <!-- Rank number displayed in the corner of the card -->
+                <div class="gun-rank">#1</div>
+                <!-- Wrapper div used to control the size and alignment of the gun image -->
+                <div class="gun-img-wrap">
+                    <img src="gun_images\vandal.png" alt="Vandal">
+                </div>
+                <!-- Info block that holds the gun name, type tag, description and stat bars -->
+                <div class="gun-info">
+                    <!-- Top row that places the gun name and type tag side by side -->
+                    <div class="gun-top">
+                        <h3>Vandal</h3>
+                        <span class="gun-type">Rifle</span>
+                    </div>
+                    <p>Full-damage at any range. One headshot kills instantly — the weapon of choice for precise players.</p>
+                    <!-- Stats block that shows cost and a visual damage bar -->
+                    <div class="gun-stats">
+                        <div class="stat">
+                            <span class="stat-label">Cost</span>
+                            <span class="stat-val">2,900 CR</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Damage</span>
+                            <!-- The inner div width is set inline to represent the damage level as a filled bar -->
+                            <div class="stat-bar"><div style="width: 95%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gun card: same structure reused for the Phantom -->
+            <div class="gun-card">
+                <div class="gun-rank">#2</div>
+                <div class="gun-img-wrap">
+                    <img src="gun_images\phantom.png" alt="Phantom">
+                </div>
+                <div class="gun-info">
+                    <div class="gun-top">
+                        <h3>Phantom</h3>
+                        <span class="gun-type">Rifle</span>
+                    </div>
+                    <p>Silenced burst fire with no tracers. Dominant in close-to-mid range with faster fire rate.</p>
+                    <div class="gun-stats">
+                        <div class="stat">
+                            <span class="stat-label">Cost</span>
+                            <span class="stat-val">2,900 CR</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Damage</span>
+                            <!-- Width set to 80% since Phantom does slightly less damage than the Vandal -->
+                            <div class="stat-bar"><div style="width: 80%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Gun card: same structure reused for the Operator -->
+            <div class="gun-card">
+                <div class="gun-rank">#3</div>
+                <div class="gun-img-wrap">
+                    <img src="gun_images\operator.png" alt="Operator">
+                </div>
+                <div class="gun-info">
+                    <div class="gun-top">
+                        <h3>Operator</h3>
+                        <span class="gun-type">Sniper</span>
+                    </div>
+                    <p>The most powerful sniper. One-shots to the body. Controls entire sightlines when used correctly.</p>
+                    <div class="gun-stats">
+                        <div class="stat">
+                            <span class="stat-label">Cost</span>
+                            <span class="stat-val">4,700 CR</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-label">Damage</span>
+                            <!-- Width set to 100% since the Operator has the highest damage of all guns -->
+                            <div class="stat-bar"><div style="width: 100%"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Skins Section------------->
+
+    <!-- Section wrapper with an extra "skins-section" class for specific CSS targeting -->
+    <div class="section skins-section">
+        <h2>Top Valorant Skins</h2>
+        <p class="section-subtitle">Premium bundles worth every Valorant Point</p>
+
+        <!-- Grid container that holds all the skin cards -->
+        <div class="skins-grid">
+
+            <!-- Featured skin card — uses "skin-featured" class to make it larger than the others -->
+            <div class="skin-card skin-featured">
+                <!-- Background image applied inline so each card can have its own unique image -->
+                <div class="skin-bg" style="background-image: url('gun_skins/Ora_bundle.png');"></div>
+                <!-- Dark overlay div that sits on top of the image to make the text more readable -->
+                <div class="skin-overlay"></div>
+                <!-- Text content block that sits above the overlay -->
+                <div class="skin-body">
+                    <!-- Row of badges showing the skin tier and theme tag -->
+                    <div class="skin-badges">
+                        <span class="skin-tier tier-premium">✦ PREMIUM</span>
+                        <span class="skin-tag">Music-Themed</span>
+                    </div>
+                    <h3>Ora Bundle</h3>
+                    <p>Futuristic music-themed design with color-shifting variants and a built-in song shuffler that plays on kills.</p>
+                    <!-- Footer row that places the price and weapon count on opposite sides -->
+                    <div class="skin-footer">
+                        <span class="skin-price">7,100 VP</span>
+                        <span class="skin-weapons">5 Weapons + Melee</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skin card: same structure reused for the Myst Bloom bundle -->
+            <div class="skin-card">
+                <div class="skin-bg" style="background-image: url('gun_skins/myst_bloom_bundle.png');"></div>
+                <div class="skin-overlay"></div>
+                <div class="skin-body">
+                    <div class="skin-badges">
+                        <!-- Different tier class applied to change the badge color in CSS -->
+                        <span class="skin-tier tier-select">◈ SELECT</span>
+                        <span class="skin-tag">Lotus-Themed</span>
+                    </div>
+                    <h3>Myst Bloom Bundle</h3>
+                    <p>Soft pastel aesthetic with vibrant pink, blue, and purple color variants across the collection.</p>
+                    <div class="skin-footer">
+                        <span class="skin-price">5,100 VP</span>
+                        <span class="skin-weapons">4 Weapons</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Skin card: same structure reused for the Evori Dreamwings bundle -->
+            <div class="skin-card">
+                <div class="skin-bg" style="background-image: url('gun_skins/Evori_dreamwings_bundle.png');"></div>
+                <div class="skin-overlay"></div>
+                <div class="skin-body">
+                    <div class="skin-badges">
+                        <!-- Ultra tier gets its own class for a different badge style -->
+                        <span class="skin-tier tier-ultra">⬡ ULTRA</span>
+                        <span class="skin-tag">Magical</span>
+                    </div>
+                    <h3>Evori Dreamwings</h3>
+                    <p>Ultra-tier magical collection with adorable animated familiars that ride on each weapon.</p>
+                    <div class="skin-footer">
+                        <span class="skin-price">9,900 VP</span>
+                        <span class="skin-weapons">5 Weapons + Melee</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Pro Teams Section------------->
+
+    <!-- Section wrapper with an extra "teams-section" class for specific CSS targeting -->
+    <div class="section teams-section">
+        <h2>Top Valorant Teams</h2>
+        <p class="section-subtitle">The best organizations competing on the global stage</p>
+
+        <!-- Grid container that holds all the team cards -->
+        <div class="teams-grid">
+
+            <!-- Team card: contains rank strip, logo, name, badge, description and region tags -->
+            <div class="team-card">
+                <!-- Colored side strip that displays the team's rank number -->
+                <div class="team-rank-strip">01</div>
+                <!-- Wrapper div used to control the size and alignment of the team logo -->
+                <div class="team-logo-wrap">
+                    <img src="professional_team/sentinels.png" alt="Sentinels">
+                </div>
+                <!-- Info block that holds the name row, description and region tags -->
+                <div class="team-info">
+                    <!-- Row that places the team name and rank badge side by side -->
+                    <div class="team-name-row">
+                        <h3>Sentinels</h3>
+                        <!-- Badge color is controlled by the "badge-gold" class -->
+                        <span class="team-badge badge-gold">🏆 #1</span>
+                    </div>
+                    <p>Aggressive and dominant gameplay with star-studded rosters that define the NA scene.</p>
+                    <!-- Tag row showing the team's region and which VCT league they compete in -->
+                    <div class="team-tags">
+                        <span class="team-tag">North America</span>
+                        <span class="team-tag">VCT Americas</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team card: same structure reused for Fnatic -->
+            <div class="team-card">
+                <div class="team-rank-strip">02</div>
+                <div class="team-logo-wrap">
+                    <img src="professional_team/fnatic.png" alt="Fnatic">
+                </div>
+                <div class="team-info">
+                    <div class="team-name-row">
+                        <h3>Fnatic</h3>
+                        <!-- Badge color changes to silver for second place -->
+                        <span class="team-badge badge-silver"># 2</span>
+                    </div>
+                    <p>Elite European strategy and incredible teamwork. One of esports' most iconic organizations.</p>
+                    <div class="team-tags">
+                        <span class="team-tag">Europe</span>
+                        <span class="team-tag">VCT EMEA</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Team card: same structure reused for Paper Rex -->
+            <div class="team-card">
+                <div class="team-rank-strip">03</div>
+                <div class="team-logo-wrap">
+                    <img src="professional_team/paperex.png" alt="Paper Rex">
+                </div>
+                <div class="team-info">
+                    <div class="team-name-row">
+                        <h3>Paper Rex</h3>
+                        <!-- Badge color changes to bronze for third place -->
+                        <span class="team-badge badge-bronze"># 3</span>
+                    </div>
+                    <p>Chaotic, fast-paced, and completely unpredictable. The most entertaining team to watch.</p>
+                    <div class="team-tags">
+                        <span class="team-tag">Asia-Pacific</span>
+                        <span class="team-tag">VCT Pacific</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Game Modes Section------------->
+
+    <!-- Section wrapper with an extra "modes-section" class for specific CSS targeting -->
+    <div class="section modes-section">
+        <h2>Game Modes</h2>
+        <p class="section-subtitle">Every way to play Valorant</p>
+
+        <!-- Grid container that holds all the mode cards -->
+        <div class="modes-grid">
+
+            <!-- Mode card: contains an icon, text content block and a label badge -->
+            <div class="mode-card">
+                <div class="mode-icon">◎</div>
+                <!-- Text block that holds the mode name and description -->
+                <div class="mode-content">
+                    <h3>Unrated</h3>
+                    <p>Standard 5v5 gameplay with no rank on the line. Perfect for warming up and improving.</p>
+                </div>
+                <!-- Small label that appears in the corner to categorize the mode -->
+                <span class="mode-label">Casual</span>
+            </div>
+
+            <!-- Mode card: "mode-highlight" class is added to visually accent the ranked card -->
+            <div class="mode-card mode-highlight">
+                <div class="mode-icon">◈</div>
+                <div class="mode-content">
+                    <h3>Competitive</h3>
+                    <p>Ranked mode where every round matters. Climb from Iron to Radiant and prove your skill.</p>
+                </div>
+                <span class="mode-label">Ranked</span>
+            </div>
+
+            <!-- Mode card: same base structure reused for Spike Rush -->
+            <div class="mode-card">
+                <div class="mode-icon">⚡</div>
+                <div class="mode-content">
+                    <h3>Spike Rush</h3>
+                    <p>Shorter, faster matches where all players carry the spike. Random weapons keep it wild.</p>
+                </div>
+                <span class="mode-label">Quick Play</span>
+            </div>
+
+            <!-- Mode card: same base structure reused for Deathmatch -->
+            <div class="mode-card">
+                <div class="mode-icon">◉</div>
+                <div class="mode-content">
+                    <h3>Deathmatch</h3>
+                    <p>Pure aim training. 14 players, infinite respawns, no abilities. Just guns and mechanics.</p>
+                </div>
+                <span class="mode-label">Training</span>
+            </div>
+
+        </div>
+    </div>
+
+<!------------------------------->
+
+
+<!-------Scripts------------->
+
+    <script>
+
+        //-------Map Scroll Animation---------------
+
+            // Selects all map item elements on the page so we can loop through them
+            const items = document.querySelectorAll(".map-item");
+
+            // Checks each map card's position and adds or removes the "active" class
+            function handleScroll() {
+                items.forEach(item => {
+                    const rect = item.getBoundingClientRect();
+
+                    // Only activates the card when it is between 30% and 70% of the visible screen
+                    // This creates a smooth entrance effect as the user scrolls through the maps
+                    if (
+                        rect.top < window.innerHeight * 0.7 &&
+                        rect.bottom > window.innerHeight * 0.3
+                    ) {
+                        // Adds "active" class to trigger the CSS animation for this card
+                        item.classList.add("active");
+                    } else {
+                        // Removes "active" class when the card scrolls out of the trigger zone
+                        item.classList.remove("active");
+                    }
+                });
+            }
+
+            // Runs the check every time the user scrolls the page
+            window.addEventListener("scroll", handleScroll);
+
+            // Also runs once when the page first loads in case a card is already in view
+            window.addEventListener("load", handleScroll);
+
+        //-------------------------------
+
+    </script>
+
+<!------------------------------->
+
+</body>
+</html>
